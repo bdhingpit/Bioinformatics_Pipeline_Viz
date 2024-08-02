@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<data>
+	<workflow name="Metabarcoding OTU Clustering - Illumina PE">
+		<file>metabarcoding-otu_clustering-pipeline.txt</file>
+		<workflow-desc>OTU clustering pipeline for Illumina metabarcoding paired-end reads</workflow-desc>
+	</workflow>
+	<workflow name='Metabarcoding Denoising - Illumina PE'>
+		<file>metabarcoding-denoising-pipeline.txt</file>
+		<workflow-desc>Pipeline for denoising of Illumina metabarcoding paired-end reads.</workflow-desc>
+	</workflow>
+	<workflow name='Metabarcoding Denoising - PacBio CCS'>
+		<file>metabarcoding-denoising-pacbio_ccs-pipeline.txt</file>
+		<workflow-desc>Pipeline for denoising of PacBio CCS reads.</workflow-desc>
+	</workflow>
+	<workflow name='Shotgun Metagenomics - Eukaryotes'>
+		<file>shotgun-metagenomics-eukaryotes-pipeline.txt</file>
+		<workflow-desc>Pipeline for QC, assembly, and binning of the eukaryotic fraction of a shotgun metagenomic data.</workflow-desc>
+	</workflow>
+	<workflow name='Genomics - Prokaryotes'>
+		<file>genomics-prokaryotes-pipeline.txt</file>
+		<workflow-desc>Pipeline for QC, assembly, and annotation of prokaryotic genomic data.</workflow-desc>
+	</workflow>
+	<workflow name='PICRUSt2'>
+		<file>PICRUSt2-pipeline.txt</file>
+		<workflow-desc>Pipeline for prediction of community functional profile from 16S sequence data.</workflow-desc>
+	</workflow>
+</data>

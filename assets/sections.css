@@ -1,0 +1,55 @@
+html, body, body > header { 
+	height: 100%; 
+	margin: 0; 
+	padding: 0; 
+}
+
+.section {
+	background-color: #f9f9f9;
+	border: 1px solid #dbdbdb;
+	padding: 10px;
+	flex: 1;
+	margin-top: 30px;
+	margin-right: 15px;
+	margin-left: 15px;
+	filter: drop-shadow(2px 2px 2px #dbdbdb);
+}
+
+#menu-container {
+	height: 10vh;
+	z-index: 1000;
+	position: relative;
+}
+
+#dropdown-menu-container {
+	width: 25vw;
+	z-index: 1000;
+	position: absolute;
+	top: 50%;
+	margin: 0;
+	transform: translateY(-50%);
+}
+
+#parent-pipeline-container {
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+
+#cytoscape-container {
+	height: 80vh;
+	flex: 1.5;
+	margin-bottom: 30px;
+}
+
+#pipeline-overview-container {
+	height: auto;
+	flex: 1;
+	margin-bottom: 30px;
+}
+
+

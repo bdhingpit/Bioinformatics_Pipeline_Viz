@@ -1,0 +1,6 @@
+source	target
+0.ext_data.FASTQ	1.qiime_tools_import
+1.qiime_tools_import.1	2.qiime_cutadapt_trim-paired
+2.qiime_cutadapt_trim-paired.1	3.qiime_dada2_denoise-paired
+3.qiime_dada2_denoise-paired.2	4.qiime_feature-classifier_classify-sklearn
+4.qiime_feature-classifier_classify-sklearn.1	5.qiime_taxa_barplot
