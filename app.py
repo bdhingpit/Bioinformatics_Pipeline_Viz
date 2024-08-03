@@ -12,7 +12,7 @@ app = Dash(
     'Bioinformatics_Pipeline_Viz',
     external_stylesheets=[dbc.themes.BOOTSTRAP]
 )
-
+server = app.server
 
 # Parent container for the Menu (topmost section)
 def return_menu():
