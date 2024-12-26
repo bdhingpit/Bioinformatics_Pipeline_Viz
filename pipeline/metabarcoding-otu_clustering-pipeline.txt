@@ -1,11 +1,11 @@
-source	target
-0.ext_data.FASTQ	1.qiime_tools_import
+source	target	ext_data_desc
+0.ext_data.FASTQ	1.qiime_tools_import	FASTQ format Illumina paired-end library(ies).
 1.qiime_tools_import.1	2.qiime_cutadapt_trim-paired
 2.qiime_cutadapt_trim-paired.1	3.qiime_vsearch_merge-pairs
 3.qiime_vsearch_merge-pairs.1	4.qiime_quality-filter_q-score
 4.qiime_quality-filter_q-score.1	5.qiime_vsearch_dereplicate-sequences
 5.qiime_vsearch_dereplicate-sequences.1,2	6.qiime_vsearch_cluster-features-open-reference
-0.ext_data.qza-FeatureData[Sequence]	6.qiime_vsearch_cluster-features-open-reference
+0.ext_data.qza-FeatureData[Sequence]	6.qiime_vsearch_cluster-features-open-reference	Reference sequences for clustering.
 6.qiime_vsearch_cluster-features-open-reference.1	7.qiime_feature-table_filter-features
 6.qiime_vsearch_cluster-features-open-reference.2	8.qiime_feature-table_filter-seqs
 7.qiime_feature-table_filter-features.1	8.qiime_feature-table_filter-seqs
@@ -16,6 +16,6 @@ source	target
 8.qiime_feature-table_filter-seqs.1	11.qiime_feature-table_filter-seqs
 9.qiime_vsearch_uchime-denovo.2	11.qiime_feature-table_filter-seqs
 11.qiime_feature-table_filter-seqs.1	12.qiime_feature-classifier_classify-sklearn
-0.ext_data.qza-TaxonomicClassifier	12.qiime_feature-classifier_classify-sklearn
+0.ext_data.qza-TaxonomicClassifier	12.qiime_feature-classifier_classify-sklearn	Naive Bayes taxonomic classifier.
 10.qiime_feature-table_filter-features.1	13.qiime_taxa_barplot
 12.qiime_feature-classifier_classify-sklearn.1	13.qiime_taxa_barplot

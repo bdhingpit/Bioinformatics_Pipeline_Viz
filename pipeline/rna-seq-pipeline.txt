@@ -1,0 +1,11 @@
+source	target	ext_data_desc
+0.ext_data.FASTQ	1.FastQC	FASTQ format Illumina single or paired-end library(ies)
+0.ext_data.FASTQ	2.Trimmomatic	FASTQ format Illumina single or paired-end library(ies)
+2.Trimmomatic.1	3.Trinity
+0.ext_data.BLASTDB	4.BLAST	Indexed BLAST database.
+3.Trinity.1	4.BLAST
+3.Trinity.1	6.align_and_estimate_abundance.pl--prep-reference
+6.align_and_estimate_abundance.pl--prep-reference.1	7.align_and_estimate_abundance.pl
+2.Trimmomatic.1	7.align_and_estimate_abundance.pl
+7.align_and_estimate_abundance.pl.1	8.DESeq2
+0.ext_data.metadata	8.DESeq2	Metadata file used to define sample groups for DE analysis.

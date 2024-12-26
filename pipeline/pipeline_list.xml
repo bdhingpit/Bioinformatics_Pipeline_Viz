@@ -13,15 +13,27 @@
 		<workflow-desc>Pipeline for denoising of PacBio CCS reads.</workflow-desc>
 	</workflow>
 	<workflow name='Shotgun Metagenomics - Eukaryotes'>
-		<file>shotgun-metagenomics-eukaryotes-pipeline.txt</file>
-		<workflow-desc>Pipeline for QC, assembly, and binning of the eukaryotic fraction of a shotgun metagenomic data.</workflow-desc>
+		<file>shotgun-metagenomics-euk-binning-pipeline.txt</file>
+		<workflow-desc>Pipeline for QC, assembly, and binning of the eukaryotic fraction of a shotgun metagenomic Illumina paired-end data.</workflow-desc>
+	</workflow>
+	<workflow name='Shotgun Metagenomics - Virus'>
+		<file>shotgun-metagenomics-viral-binning-pipeline.txt</file>
+		<workflow-desc>Pipeline for QC, assembly, and binning of the viral fraction of a shotgun metagenomic Illumina paired-end data.</workflow-desc>
 	</workflow>
 	<workflow name='Genomics - Prokaryotes'>
 		<file>genomics-prokaryotes-pipeline.txt</file>
-		<workflow-desc>Pipeline for QC, assembly, and annotation of prokaryotic genomic data.</workflow-desc>
+		<workflow-desc>Pipeline for QC, assembly, and functional annotation of prokaryotic genomic Illumina paired-end data.</workflow-desc>
 	</workflow>
 	<workflow name='PICRUSt2'>
 		<file>PICRUSt2-pipeline.txt</file>
-		<workflow-desc>Pipeline for prediction of community functional profile from 16S sequence data.</workflow-desc>
+		<workflow-desc>Pipeline for prediction of community functional profile from 16S metabarcoding sequence data.</workflow-desc>
+	</workflow>
+	<workflow name='Phylogenetic Placement'>
+		<file>phylogenetic-placement-pipeline.txt</file>
+		<workflow-desc>Pipeline for placement of short sequencing reads into a reference phylogenetic tree.</workflow-desc>
+	</workflow>
+	<workflow name='RNA-seq'>
+		<file>rna-seq-pipeline.txt</file>
+		<workflow-desc>Pipeline for RNA-seq Illumina paired-end data. Includes: QC, assembly, mapping, estimation of transcript abundance, functional annotation, and differential expression analysis.</workflow-desc>
 	</workflow>
 </data>

@@ -1,0 +1,753 @@
+<?xml version='1.0'?>
+<data>
+	<!--Assembly Module-->
+	<tool name='MEGAHIT'>
+		<desc>Ultra-fast and memory-efficient NGS assembler optimized for metagenomes [See Assembly Module]</desc>
+		<output>
+			<output-type>FASTA</output-type>
+			<output-desc>Assembled contigs.</output-desc>
+		</output>
+	</tool>
+	<tool name='SPAdes'>
+		<desc>Toolkit designed for assembly of sequencing data [See Assembly Module]</desc>
+		<output>
+			<output-type>FASTA</output-type>
+			<output-desc>Assembled contigs.</output-desc>
+		</output>
+	</tool>
+	<tool name='Trinity'>
+		<desc>Method for the efficient and robust de novo reconstruction of transcriptomes from RNA-seq data [See Assembly Module]</desc>
+		<output>
+			<output-type>FASTA</output-type>
+			<output-desc>Assembled transcripts.</output-desc>
+		</output>
+	</tool>
+		<tool name='QUAST'>
+		<desc>Utility to evaluate genome or metagenome (metaQUAST) assemblies [See Assembly Module]</desc>
+		<output>
+			<output-type>HTML</output-type>
+			<output-desc>HTML report displaying various assembly metrics.</output-desc>
+		</output>
+	</tool>
+	
+	<!--Contig Binning Module-->
+	<tool name='jgi_summarize_bam_contig_depths'>
+		<desc>Calculates the coverage of each contig in the assembly [See Contig Binning Module]</desc>
+		<output>
+			<output-type>Table</output-type>
+			<output-desc>Tabular file containing contig coverage across samples.</output-desc>
+		</output>
+	</tool>
+	<tool name='MetaBAT2'>
+		<desc>Reconstructs genomes (aka. Bins) from metagenomic assembly data [See Contig Binning Module]</desc>
+		<output>
+			<output-type>FASTA files</output-type>
+			<output-desc>Contigs separated into different FASTA files of putative bins </output-desc>
+		</output>
+	</tool>
+	<tool name='EukCC'>
+		<desc>Estimates completeness and contamination of a eukaryotic bin [See Contig Binning Module]</desc>
+		<output>
+			<output-type>Stats</output-type>
+			<output-desc>Table displaying completeness and contamination estimates of bins.</output-desc>
+		</output>
+	</tool>
+	<tool name='CheckM v1'>
+		<desc>Provides robust estimates of genome completeness and contamination by using collocated sets of genes that are ubiquitous and single-copy within a phylogenetic lineage [See Contig Binning Module]</desc>
+		<output>
+			<output-type>Stats</output-type>
+			<output-desc>Table displaying completeness and contamination estimates of bins.</output-desc>
+		</output>
+	</tool>
+	<tool name='CheckV'>
+		<desc>Estimates completeness of viral genomes/bins by comparing its length to a closely-related genome [See Contig Binning Module]</desc>
+		<output>
+			<output-type>Stats</output-type>
+			<output-desc>Table displaying completeness and contamination estimates of bins.</output-desc>
+		</output>
+	</tool>
+	
+	<!--Contig Level Functional Annotation-->
+	<tool name='Prodigal'>
+		<desc>Tool designed to predict protein-coding genes in bacterial and archaeal genomes [See Contig Level Functional Annotation Module]</desc>
+		<output>
+			<output-type>GFF</output-type>
+			<output-desc>Annotation file.</output-desc>
+		</output>
+		<output>
+			<output-type>FAA</output-type>
+			<output-desc>Protein FASTA file of the translated CDS.</output-desc>
+		</output>
+		<output>
+			<output-type>FNA</output-type>
+			<output-desc>Nucleotide FASTA file of the CDS.</output-desc>
+		</output>
+	</tool>
+	<tool name='AUGUSTUS'>
+		<desc>Tool used in predicting genes in eukaryotic genomes [See Contig Level Functional Annotation Module]</desc>
+		<output>
+			<output-type>GTF</output-type>
+			<output-desc>Annotation file.</output-desc>
+		</output>
+	</tool>
+	<tool name='Prokka'>
+		<desc>Annotate bacterial, archaeal and viral genomes quickly and produce standards-compliant output files [See Contig Level Functional Annotation Module]</desc>
+		<output>
+			<output-type>GFF</output-type>
+			<output-desc>This is the master annotation in GFF3 format, containing both sequences and annotations. It can be viewed directly in Artemis or IGV.</output-desc>
+		</output>
+		<output>
+			<output-type>GBK</output-type>
+			<output-desc>This is a standard Genbank file derived from the master .gff. If the input to prokka was a multi-FASTA, then this will be a multi-Genbank, with one record for each sequence.</output-desc>
+		</output>
+		<output>
+			<output-type>FAA</output-type>
+			<output-desc>Protein FASTA file of the translated CDS sequences.</output-desc>
+		</output>
+		<output>
+			<output-type>FFN</output-type>
+			<output-desc>Nucleotide FASTA file of all the prediction transcripts (CDS, rRNA, tRNA, tmRNA, misc_RNA).</output-desc>
+		</output>
+	</tool>
+	<tool name='makeblastdb'>
+		<desc>Creates a BLAST database [See Contig Level Functional Annotation Module]</desc>
+		<output>
+			<output-type>BLAST DB</output-type>
+			<output-desc>Indexed BLAST database.</output-desc>
+		</output>
+	</tool>
+	<tool name='BLAST'>
+		<desc>Finds regions of local similarity between sequences [See Contig Level Functional Annotation Module]</desc>
+		<output>
+			<output-type>Stats</output-type>
+			<output-desc>Table showing summary of query alignments. Table format depends on `-outfmt` argument.</output-desc>
+		</output>
+	</tool>
+	<tool name='diamond_makedb'>
+		<desc>Creates a DIAMOND indexed database [See Contig Level Functional Annotation Module]</desc>
+		<output>
+			<output-type>DIAMOND DB</output-type>
+			<output-desc>Indexed DIAMOND database.</output-desc>
+		</output>
+	</tool>
+	<tool name='DIAMOND'>
+		<desc>DIAMOND is a sequence aligner for protein and translated DNA searches, designed for high performance analysis of big sequence data. [See Contig Level Functional Annotation Module]</desc>
+		<output>
+			<output-type>Stats</output-type>
+			<output-desc>Table showing summary of query alignments. Table format depends on `--outfmt` argument.</output-desc>
+		</output>
+	</tool>
+	<tool name='EggNOG Mapper'>
+		<desc>EggNOG-mapper is a tool for fast functional annotation of novel sequences. It uses precomputed orthologous groups and phylogenies from the eggNOG database to transfer functional information from fine-grained orthologs only. [See Contig Level Functional Annotation Module]</desc>
+		<output>
+			<output-type>Stats</output-type>
+			<output-desc>Table showing query hits and cross-references (KO, EC, GO, etc.).</output-desc>
+		</output>
+	</tool>
+	<tool name='BlastKOALA'>
+		<desc>BlastKOALA (and GhostKOALA) are automatic annotation servers for genome and metagenome sequences, which perform KO (KEGG Orthology) assignments to characterize individual gene functions and reconstruct KEGG pathways, BRITE hierarchies and KEGG modules to infer high-level functions of the organism or the ecosystem. [See Contig Level Functional Annotation Module]</desc>
+		<output>
+			<output-type>Report</output-type>
+			<output-desc>Output report is displayed in a webpage. This consists of basic stats (e.g. annotation rate), pie chart, and a table showing KO assignments of the query genes. Reconstruction of KEGG pathways based on the KO annotations is also possible.</output-desc>
+		</output>
+	</tool>
+	<tool name='MetaEuk'>
+		<desc>A bioinformatic tool dedicated for functional annotation of eukaryotic metagenomic contigs. [See Contig Level Functional Annotation Module]</desc>
+		<output>
+			<output-type>FASTA</output-type>
+			<output-desc>Predicted protein sequences.</output-desc>
+		</output>
+		<output>
+			<output-type>GFF</output-type>
+			<output-desc>Annotation file.</output-desc>
+		</output>
+	</tool>
+	
+	<!--Contig Level Taxonomic Annotation-->
+	<tool name='EukRep'>
+		<desc>Identification of Eukaryotic contigs from metagenomic datasets [See Contig Level Taxonomic Annotation Module]</desc>
+		<output>
+			<output-type>FASTA</output-type>
+			<output-desc>Predicted eukaryotic (and optionally, prokayotic) contigs.</output-desc>
+		</output>
+	</tool>
+	<tool name='VirSorter2'>
+		<desc>Identification of viral contigs from metagenomic datasets [See Contig Level Taxonomic Annotation Module]</desc>
+		<output>
+			<output-type>FASTA</output-type>
+			<output-desc>Identified viral sequences/contigs.</output-desc>
+		</output>
+	</tool>
+	<tool name='mmseqs_databases'>
+		<desc>Downloads a pre-built MMSeqs2 database [See Contig Level Taxonomic Annotation Module]</desc>
+		<output>
+			<output-type>targetDB</output-type>
+			<output-desc>Database of reference sequences.</output-desc>
+		</output>
+	</tool>
+	<tool name='mmseqs_createdb'>
+		<desc>Creates an index for a set of sequence in FASTA format [See Contig Level Taxonomic Annotation Module]</desc>
+		<output>
+			<output-type>queryDB</output-type>
+			<output-desc>Database of indexed sequences.</output-desc>
+		</output>
+	</tool>
+	<tool name='mmseqs_taxonomy'>
+		<desc>Taxonomy assignment by computing the lowest common ancestor of homologs using 2bLCA [See Contig Level Taxonomic Annotation Module]</desc>
+		<output>
+			<output-type>taxonomyResult</output-type>
+			<output-desc>Results of MMSeqs2 taxonomy workflow.</output-desc>
+		</output>
+	</tool>
+	<tool name='mmseqs_createtsv'>
+		<desc>Creates a TSV report from an MMSeqs2 result object [See Contig Level Taxonomic Annotation Module]</desc>
+		<output>
+			<output-type>TSV</output-type>
+			<output-desc>TSV formatted report.</output-desc>
+		</output>
+	</tool>
+	<tool name='mmseqs_taxonomyreport'>
+		<desc>Creates reports based on all target database hits found from search results (or cluster members, if given a clustering of seqTaxDB input) or on all sequences in a sequence database. Format depends on argument specified. [See Contig Level Taxonomic Annotation Module]</desc>
+		<output>
+			<output-type>taxonomyReport</output-type>
+			<output-desc>Kraken or Krona style taxonomy report.</output-desc>
+		</output>
+	</tool>
+	<tool name='mmseqs_filtertaxdb'>
+		<desc>Filters a taxonomyResult MMSeqs2 object. [See Contig Level Taxonomic Annotation Module]</desc>
+		<output>
+			<output-type>taxonomyResult</output-type>
+			<output-desc>Filtered results of MMSeqs2 taxonomy workflow.</output-desc>
+		</output>
+	</tool>
+	<tool name='Bin_Annotation_Tool'>
+		<desc>A pipeline for the taxonomic classification of a metagenome assembled genome (MAG/bin) of both known and unknown microorganisms. [See Contig Level Taxonomic Annotation Module]</desc>
+		<output>
+			<output-type>ORF2LCA</output-type>
+			<output-desc>Summary of lineage (and score) assigned to each identified ORF.</output-desc>
+		</output>
+		<output>
+			<output-type>bin2classification</output-type>
+			<output-desc>Summary of bin classification.</output-desc>
+		</output>
+		<output>
+			<output-type>FASTA</output-type>
+			<output-desc>Predicted protein sequences.</output-desc>
+		</output>
+	</tool>
+	
+	<!--Differential Expression Analysis-->
+	<tool name='DESeq2'>
+		<desc>Differential gene expression analysis based on the negative binomial distribution [See Differential Expression Analysis Module].</desc>
+		<output>
+			<output-type>Stats</output-type>
+			<output-desc>Statistical results of differential gene expression analysis.</output-desc>
+		</output>
+	</tool>
+	
+	<!--Diversity Analysis-->
+	<tool name='qiime_diversity_alpha-rarefaction'>
+		<desc>Generate interactive alpha rarefaction curves by computing rarefactions [See Diversity Analysis Module].</desc>
+		<output>
+			<output-type>qzv</output-type>
+			<output-desc>Alpha rarefaction curves.</output-desc>
+		</output>
+	</tool>
+	<tool name='qiime_phylogeny_align-to-tree-mafft-fasttree'>
+		<desc>Aligns, masks, and infers a phylogenetic tree from a set of sequences [See Diversity Analysis Module].</desc>
+		<output>
+			<output-type>qza-FeatureData[AlignedSequence]</output-type>
+			<output-desc>Alignment.</output-desc>
+		</output>
+		<output>
+			<output-type>qza-FeatureData[AlignedSequence]</output-type>
+			<output-desc>Masked alignment.</output-desc>
+		</output>
+		<output>
+			<output-type>qza-Phylogeny[Unrooted]</output-type>
+			<output-desc>Unrooted tree.</output-desc>
+		</output>
+		<output>
+			<output-type>qza-Phylogeny[Rooted]</output-type>
+			<output-desc>Rooted tree.</output-desc>
+		</output>
+	</tool>
+	<tool name='qiime_diversity_core-metrics-phylogenetic'>
+		<desc>Rarefies and applies a collection of diversity metrics (both phylogenetic and non-phylogenetic) to a feature table [See Diversity Analysis Module].</desc>
+		<output>
+			<output-type>qza-FeatureTable[Frequency]</output-type>
+			<output-desc>Rarefied feature table.</output-desc>
+		</output>
+		<output>
+			<output-type>Multiple qza-SampleData[AlphaDiversity]</output-type>
+			<output-desc>Vector of alpha diversity metric.</output-desc>
+		</output>
+		<output>
+			<output-type>Multiple qza-DistanceMatrix</output-type>
+			<output-desc>Beta diversity matrix.</output-desc>
+		</output>
+		<output>
+			<output-type>Multiple qza-PCoAResults</output-type>
+			<output-desc>PCoA matrix computed from a beta diversity metric.</output-desc>
+		</output>
+		<output>
+			<output-type>Multiple qzv</output-type>
+			<output-desc>Emperor plot of the PCoA matrix computed from a beta diversity metric.</output-desc>
+		</output>
+	</tool>
+	<tool name='qiime_diversity_alpha-group-significance'>
+		<desc>Visually and statistically compare groups of alpha diversity values [See Diversity Analysis Module].</desc>
+		<output>
+			<output-type>qzv</output-type>
+			<output-desc>Boxplot and statistical tables for alpha diversity group comparison.</output-desc>
+		</output>
+	</tool>
+	<tool name='qiime_diversity_alpha-correlation'>
+		<desc>Determine whether numeric sample metadata columns are correlated with alpha diversity [See Diversity Analysis Module].</desc>
+		<output>
+			<output-type>qzv</output-type>
+			<output-desc>Correlation statistics.</output-desc>
+		</output>
+	</tool>
+	<tool name='qiime_diversity_adonis'>
+		<desc>Determine whether groups of samples are significantly different from one another using the ADONIS permutation-based statistical test in vegan-R [See Diversity Analysis Module].</desc>
+		<output>
+			<output-type>qzv</output-type>
+			<output-desc>ADONIS statistical results.</output-desc>
+		</output>
+	</tool>
+	
+	<!--QIIME2 Exporting-->
+	<tool name='qiime_tools_export'>
+		<desc>Exporting extracts (and optionally transforms) data stored inside an Artifact or Visualization [See QIIME2 Exporting Module].</desc>
+		<output>
+			<output-type>File</output-type>
+			<output-desc>Exported file depends on QIIME2 Artifact type or Visualization.</output-desc>
+		</output>
+	</tool>
+	
+	<!--QIIME2 Feature Table Filtering-->
+	<tool name='qiime_feature-table_filter-features'>
+		<desc>Filter features from table based on frequency and/or metadata [See QIIME2 Feature Table Filtering Module].</desc>
+		<output>
+			<output-type>qza-FeatureTable[Frequency]</output-type>
+			<output-desc>The resulting feature table filtered by feature.</output-desc>
+		</output>
+	</tool>
+	<tool name='qiime_feature-table_filter-seqs'>
+		<desc>Filter features from sequences based on a feature table or metadata [See QIIME2 Feature Table Filtering Module].</desc>
+		<output>
+			<output-type>qza-FeatureData[Sequence| AlignedSequence]</output-type>
+			<output-desc>The resulting filtered sequences.</output-desc>
+		</output>
+	</tool>
+	<tool name='qiime_vsearch_uchime-denovo'>
+		<desc>Apply the vsearch uchime_denovo method to identify chimeric feature sequences [See QIIME2 Feature Table Filtering Module].</desc>
+		<output>
+			<output-type>qza-FeatureData[Sequence]</output-type>
+			<output-desc>The chimeric sequences.</output-desc>
+		</output>
+		<output>
+			<output-type>qza-FeatureData[Sequence]</output-type>
+			<output-desc>The non-chimeric sequences.</output-desc>
+		</output>
+		<output>
+			<output-type>qza</output-type>
+			<output-desc>Summary statistics from chimera checking.</output-desc>
+		</output>
+	</tool>
+	<tool name='qiime_taxa_filter-table'>
+		<desc>This method filters features from a table based on their taxonomic annotations [See QIIME2 Feature Table Filtering Module].</desc>
+		<output>
+			<output-type>qza-FeatureTable[Frequency | PresenceAbsence]</output-type>
+			<output-desc>The taxonomy-filtered feature table.</output-desc>
+		</output>
+	</tool>
+	<tool name='qiime_taxa_filter-seqs'>
+		<desc>This method filters sequences based on their taxonomic annotations [See QIIME2 Feature Table Filtering Module].</desc>
+		<output>
+			<output-type>qza-FeatureTable[Frequency | PresenceAbsence]</output-type>
+			<output-desc>The taxonomy-filtered feature sequences.</output-desc>
+		</output>
+	</tool>
+	
+	<!--QIIME2 Importing-->
+	<tool name='qiime_tools_import'>
+		<desc>Imports files into qiime-compatible format [See QIIME2 Importing Module]</desc>
+		<output>
+			<output-type>qza</output-type>
+			<output-desc>qiime-imported file. Type depends on the file imported.</output-desc>
+		</output>
+	</tool>
+	
+	<!--QIIME2 Marker Gene Taxonomic Classification-->
+	<tool name='qiime_feature-classifier_classify-sklearn'>
+		<desc>Classify reads by taxon using a fitted classifier [See QIIME2 Marker Gene Taxonomic Classification Module]</desc>
+		<output>
+			<output-type>qza-FeatureData[Taxonomy]</output-type>
+			<output-desc>Feature-predicted taxonomies.</output-desc>
+		</output>
+	</tool>
+	<tool name='qiime_taxa_barplot'>
+		<desc>Produce an interactive taxa barplot [See QIIME2 Marker Gene Taxonomic Classification Module]</desc>
+		<output>
+			<output-type>qzv</output-type>
+			<output-desc>Taxa barplot.</output-desc>
+		</output>
+	</tool>
+	
+	<!--QIIME2 Metabarcoding Denoising-->
+	<tool name='qiime_dada2_denoise-paired'>
+		<desc>This method denoises paired-end sequences, dereplicates them, and filters chimeras [See QIIME2 Metabarcoding Denoising Module]</desc>
+		<output>
+			<output-type>qza-FeatureTable[Frequency]</output-type>
+			<output-desc>The resulting feature table.</output-desc>
+		</output>
+		<output>
+			<output-type>qza-FeatureData[Sequence]</output-type>
+			<output-desc>
+				The resulting feature sequences. Each feature in the feature table will be represented by exactly one sequence, 
+				and these sequences will be the joined paired-end sequences.
+			</output-desc>
+		</output>
+		<output>
+			<output-type>qza-SampleData[DADA2Stats]</output-type>
+			<output-desc>DADA2 summary stats.</output-desc>
+		</output>
+	</tool>
+	<tool name='qiime_dada2_denoise-ccs'>
+		<desc>This method denoises single-end Pacbio CCS sequences, dereplicates them, filters chimeras [See QIIME2 Metabarcoding Denoising Module]</desc>
+		<output>
+			<output-type>qza-FeatureTable[Frequency]</output-type>
+			<output-desc>The resulting feature table.</output-desc>
+		</output>
+		<output>
+			<output-type>qza-FeatureData[Sequence]</output-type>
+			<output-desc>The resulting feature sequences. Each feature in the feature table will be represented by exactly one sequence.</output-desc>
+		</output>
+		<output>
+			<output-type>qza-SampleData[DADA2Stats]</output-type>
+			<output-desc>DADA2 summary stats.</output-desc>
+		</output>
+	</tool>
+	
+	<!--QIIME2 Metabarcoding OTU Clustering-->
+	<tool name='qiime_cutadapt_trim-paired'>
+		<desc>Removes adapters in demultiplexed paired-end reads [See QIIME2 Metabarcoding OTU Clustering Module]</desc>
+		<output>
+			<output-type>qza-SampleData[PairedEndSequencesWithQuality]</output-type>
+			<output-desc>The resulting trimmed sequences.</output-desc>
+		</output>
+	</tool>
+	<tool name='qiime_vsearch_merge-pairs'>
+		<desc>Merge paired-end reads [See QIIME2 Metabarcoding OTU Clustering Module]</desc>
+		<output>
+			<output-type>qza-SampleData[JoinedSequencesWithQuality]</output-type>
+			<output-desc>The merged sequences.</output-desc>
+		</output>
+	</tool>
+	<tool name='qiime_quality-filter_q-score'>
+		<desc>Filter sequences based on sequence quality [See QIIME2 Metabarcoding OTU Clustering Module]</desc>
+		<output>
+			<output-type>qza-SampleData[JoinedSequencesWithQuality]</output-type>
+			<output-desc>The resulting quality-filtered sequences.</output-desc>
+		</output>
+		<output>
+			<output-type>qza-QualityFilterStats</output-type>
+			<output-desc>Summary statistics of the filtering process.</output-desc>
+		</output>
+	</tool>
+	<tool name='qiime_vsearch_dereplicate-sequences'>
+		<desc>Dereplicate sequence data [See QIIME2 Metabarcoding OTU Clustering Module]</desc>
+		<output>
+			<output-type>qza-FeatureTable[Frequency]</output-type>
+			<output-desc>The table of dereplicated sequences.</output-desc>
+		</output>
+		<output>
+			<output-type>qza-FeatureData[Sequence]</output-type>
+			<output-desc>The dereplicated sequences.</output-desc>
+		</output>
+	</tool>
+	<tool name='qiime_vsearch_cluster-features-open-reference'>
+		<desc>Cluster feature sequences, first, against a reference database. Unclustered sequences will then clustered following a de novo approach [See QIIME2 Metabarcoding OTU Clustering Module]</desc>
+		<output>
+			<output-type>qza-FeatureTable[Frequency]</output-type>
+			<output-desc>The table following clustering of features.</output-desc>
+		</output>
+		<output>
+			<output-type>qza-FeatureData[Sequence]-1</output-type>
+			<output-desc>Sequences representing clustered features.</output-desc>
+		</output>
+		<output>
+			<output-type>qza-FeatureData[Sequence]-2</output-type>
+			<output-desc>New reference sequences that can be used for subsequent clustering.</output-desc>
+		</output>
+	</tool>
+	
+	<!--Quality Control-->
+	<tool name='FastQC'>
+		<desc>Perform quality control checks of sequence data [See Quality Control Module].</desc>
+		<output>
+			<output-type>HTML</output-type>
+			<output-desc>HTML file displaying different visuals and statistics related to sequence data quality.</output-desc>
+		</output>
+	</tool>
+	<tool name='Trimmomatic'>
+		<desc>Trimming and filtering tool for Illumina single or paired-end reads [See Quality Control Module].</desc>
+		<output>
+			<output-type>FASTQ</output-type>
+			<output-desc>Trimmed and/or filtered sequencing reads.</output-desc>
+		</output>
+	</tool>
+	<tool name='MultQC'>
+		<desc>MultiQC is a tool to create a single report with interactive plots for multiple bioinformatics analyses across many samples [See Quality Control Module].</desc>
+		<output>
+			<output-type>HTML</output-type>
+			<output-desc>HTML file displaying various reports.</output-desc>
+		</output>
+	</tool>
+	<tool name='minimap2'>
+		<desc>A versatile sequence alignment program that aligns DNA or mRNA sequences against a large reference database [See Quality Control Module].</desc>
+		<output>
+			<output-type>HTML</output-type>
+			<output-desc>HTML file displaying various reports.</output-desc>
+		</output>
+	</tool>
+	<tool name='minimap2'>
+		<desc>MultiQC is a tool to create a single report with interactive plots for multiple bioinformatics analyses across many samples [See Quality Control Module].</desc>
+		<output>
+			<output-type>BAM</output-type>
+			<output-desc>Alignment/mapping file.</output-desc>
+		</output>
+	</tool>
+	<tool name='samtools_index'>
+		<desc>Index alignment file [See Quality Control Module].</desc>
+		<output>
+			<output-type>BAM</output-type>
+			<output-desc>Indexed alignment/mapping file.</output-desc>
+		</output>
+	</tool>
+	<tool name='samtools_fastq'>
+		<desc>Converts a SAM, BAM or CRAM to FASTQ format [See Quality Control Module].</desc>
+		<output>
+			<output-type>FASTQ</output-type>
+			<output-desc>Forward reads rid of host sequences.</output-desc>
+		</output>
+		<output>
+			<output-type>FASTQ</output-type>
+			<output-desc>Reverse reads rid of host sequences.</output-desc>
+		</output>
+	</tool>
+	
+	<!--Quantification of Contig Abundance-->
+	<tool name='align_and_estimate_abundance.pl--prep-reference'>
+		<desc>Prepares an assembly database. Useful for multi-sample datasets to prevent repetitive indexing of assembly. This is a wrapper script from Trinity [See Quantification of Contig Abundance Module].</desc>
+		<output>
+			<output-type>Database</output-type>
+			<output-desc>Indexed assembly database.</output-desc>
+		</output>
+	</tool>
+	<tool name='align_and_estimate_abundance.pl'>
+		<desc>Maps reads to the assembly, and estimates transcript abundance. This is a wrapper script from Trinity [See Quantification of Contig Abundance Module].</desc>
+		<output>
+			<output-type>*.genes.results</output-type>
+			<output-desc>Estimated gene-level abundances.</output-desc>
+		</output>
+		<output>
+			<output-type>*.isoforms.results</output-type>
+			<output-desc>Estimated transcript isoform abundances.</output-desc>
+		</output>
+	</tool>
+	
+	<!--Read-Based Functional Annotation-->
+	<tool name='pear'>
+		<desc>PEAR is an ultrafast, memory-efficient and highly accurate pair-end read merger [See Read-Based Functional Annotation Module].</desc>
+		<output>
+			<output-type>FASTQ</output-type>
+			<output-desc>Paired-end reads successfully merged.</output-desc>
+		</output>
+		<output>
+			<output-type>FASTQ</output-type>
+			<output-desc>Discarded reads.</output-desc>
+		</output>
+		<output>
+			<output-type>FASTQ</output-type>
+			<output-desc>Forward reads unsuccessfully merged.</output-desc>
+		</output>
+		<output>
+			<output-type>FASTQ</output-type>
+			<output-desc>Reverse reads unsuccessfully merged.</output-desc>
+		</output>
+	</tool>
+	<tool name='cat'>
+		<desc>Concatenate files [General Utility].</desc>
+		<output>
+			<output-type>File</output-type>
+			<output-desc>Concatenated file.</output-desc>
+		</output>
+	</tool>
+	<tool name='superfocus'>
+		<desc>Aligns reads, and identifies and classifies hits using the SEED subsystems functional hierarchy [See Read-Based Functional Annotation Module].</desc>
+		<output>
+			<output-type>M8</output-type>
+			<output-desc>Alignment of reads and reference (produced when using DIAMOND as aligner).</output-desc>
+		</output>
+		<output>
+			<output-type>XLS</output-type>
+			<output-desc>Count table showing full SEED subsystems hierarchy.</output-desc>
+		</output>
+		<output>
+			<output-type>XLS</output-type>
+			<output-desc>Count table showing Subsystem Level 1 only.</output-desc>
+		</output>
+		<output>
+			<output-type>XLS</output-type>
+			<output-desc>Count table showing Subsystem Level 2 only.</output-desc>
+		</output>
+		<output>
+			<output-type>XLS</output-type>
+			<output-desc>Count table showing Subsystem Level 3 only.</output-desc>
+		</output>
+		<output>
+			<output-type>XLS</output-type>
+			<output-desc>Summary of per-sample and per-read SEED assignment, and alignment.</output-desc>
+		</output>
+	</tool>
+	
+	<!--Functional Annotation of Metabarcoding Reads-->
+	<tool name='place_seqs.py'>
+		<desc>Script to run EPA-ng and GAPPA to place study sequences (i.e. OTUs or ASVs) into a reference tree [See Functional Annotation of Metabarcoding Reads Module].</desc>
+		<output>
+			<output-type>Tree file</output-type>
+			<output-desc>Output tree of phylogenetically placed query sequences.</output-desc>
+		</output>
+	</tool>
+	<tool name='hsp_seqs.py'>
+		<desc>Predict the copy number of gene families present in the predicted genome for each amplicon sequence variant [See Functional Annotation of Metabarcoding Reads Module].</desc>
+		<output>
+			<output-type>Table</output-type>
+			<output-desc>Output table with predicted abundances per study sequence in input tree.</output-desc>
+		</output>
+	</tool>
+	<tool name='metagenome_pipeline.py'>
+		<desc>
+			Per-sample metagenome functional profiles are generated based on the predicted functions for each study sequence. Note that typically these sequences correspond to OTUs or ASVs. The specified sequence abundance table will be normalized by the predicted number of marker gene copies before outputting the final files by default. The sample metagenome table stratified by contributing ASVs can optionally also be output [See Functional Annotation of Metabarcoding Reads Module].</desc>
+		<output>
+			<output-type>seqtab_norm.tsv</output-type>
+			<output-desc>Representative sequences' feature table that is normalized by the predicted number of 16S genes.</output-desc>
+		</output>
+		<output>
+			<output-type>weighted_nsti.tsv</output-type>
+			<output-desc>Table containing weighted NSTI values for each sample.</output-desc>
+		</output>
+		<output>
+			<output-type>pred_metagenome_unstrat.tsv</output-type>
+			<output-desc>Abundance of each gene family per sample.</output-desc>
+		</output>
+		<output>
+			<output-type>pred_metagenome_contrib.tsv</output-type>
+			<output-desc>Shows contribution of each ASV/OTU per sample per function.</output-desc>
+		</output>
+	</tool>
+	<tool name='pathway_pipeline.py'>
+		<desc>Infer the presence and abundances of pathways based on gene family abundances in a sample. By default, this script expects a table of EC number abundances (as output by PICRUSt2). However, alternative reaction to pathways mapping files can also be specified. By default, EC numbers are first regrouped to MetaCyc reactions, which are then linked to MetaCyc pathways through the default database [See Functional Annotation of Metabarcoding Reads Module].</desc>
+		<output>
+			<output-type>path_abun_contrib.tsv</output-type>
+			<output-desc>Shows contribution of each ASV/OTU per gene family per pathway.</output-desc>
+		</output>
+		<output>
+			<output-type>path_abun_unstrat.tsv</output-type>
+			<output-desc>Abundance of each pathway per sample.</output-desc>
+		</output>
+	</tool>
+	<tool name='add_descriptions.py'>
+		<desc>adds a description column to a function abundance table and outputs a new file. The user needs to specify the input file and what type of functions are in the input table [See Functional Annotation of Metabarcoding Reads Module].</desc>
+		<output>
+			<output-type>Table</output-type>
+			<output-desc>Abundance table with a new column containing description of gene family or pathway.</output-desc>
+		</output>
+	</tool>
+	
+	
+	<!--Shotgun Metagenomics Tools-->
+	
+
+	<tool name='BBMap'>
+		<desc>Mapping of sequencing reads to assembly.</desc>
+		<output>
+			<output-type>BAM/SAM</output-type>
+			<output-desc>Mapping file.</output-desc>
+		</output>
+	</tool>
+	
+	<!--Genomics Tools-->
+	
+	
+	<!--EPA Tools-->
+	<tool name='papara'>
+		<desc>A program for aligning short reads to reference phylogenies and alignments.</desc>
+		<output>
+			<output-type>FASTA</output-type>
+			<output-desc>Aligned reference and query sequences.</output-desc>
+		</output>
+	</tool>
+	<tool name='raxmlHPC_EPA'>
+		<desc>RAxML method for evolutionary placement algorithm (EPA).</desc>
+		<output>
+			<output-type>jplace</output-type>
+			<output-desc>JSON file summarizing phylogenetic placements of query sequences.</output-desc>
+		</output>
+	</tool>
+	<tool name='gappa_examine_edpl'>
+		<desc>Calculate the Expected Distance between Placement Locations (EDPL) for all queries.</desc>
+		<output>
+			<output-type>EDPL Histogram Stats</output-type>
+			<output-desc>Tabular file summarizing distribution of EDPL values.</output-desc>
+		</output>
+		<output>
+			<output-type>EDPL List</output-type>
+			<output-desc>Tabular file of EDPL values per query sequence.</output-desc>
+		</output>
+	</tool>
+	<tool name='gappa_examine_lwr-list'>
+		<desc>Print a list of all queries with their likelihood weight ratios (LWRs).</desc>
+		<output>
+			<output-type>LWR List</output-type>
+			<output-desc>Tabular file of top 'n' (--num-lwrs n; default=5) LWR per query sequence.</output-desc>
+		</output>
+	</tool>
+	<tool name='gappa_examine_heat-tree'>
+		<desc>Make a tree with edges colored according to the placement mass of the samples.</desc>
+		<output>
+			<output-type>SVG</output-type>
+			<output-desc>Heat tree visualization in .svg format (optional).</output-desc>
+		</output>
+		<output>
+			<output-type>Newick</output-type>
+			<output-desc>Tree file in Newick format (optional).</output-desc>
+		</output>
+		<output>
+			<output-type>Nexus</output-type>
+			<output-desc>Tree file in Nexus format (optional).</output-desc>
+		</output>
+		<output>
+			<output-type>PhyloXML</output-type>
+			<output-desc>Tree file in PhyloXML format (optional).</output-desc>
+		</output>
+	</tool>
+	<tool name='gappa_edit_multiplicity'>
+		<desc>Edit the multiplicities of queries in jplace files. Could be used to analyze the placements of query sequences in the reference tree weighted by their abundances.</desc>
+		<output>
+			<output-type>jplace</output-type>
+			<output-desc>JSON file of phylogenetic placements with edited multiplicities.</output-desc>
+		</output>
+	</tool>
+	<!--Others-->
+	<tool name='qiime_demux_summarize'>
+		<desc>Summarize counts per sample for all samples, and generate interactive positional quality plots based on `n` randomly selected sequences.</desc>
+		<output>
+			<output-type>qzv</output-type>
+			<output-desc>Per-sample sequence counts and positional quality plots.</output-desc>
+		</output>
+	</tool>
+</data>

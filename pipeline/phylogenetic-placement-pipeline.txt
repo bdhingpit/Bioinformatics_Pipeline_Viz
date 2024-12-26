@@ -1,0 +1,12 @@
+source	target	ext_data_desc
+0.ext_data.FASTA-1	1.papara	Unaligned query sequences.
+0.ext_data.FASTA-2	1.papara	Alignment of reference sequences.
+0.ext_data.Newick	1.papara	Reference tree.
+0.ext_data.Newick	2.raxmlHPC_EPA	Reference tree.
+1.papara.1	2.raxmlHPC_EPA
+2.raxmlHPC_EPA.1	3.gappa_examine_edpl
+2.raxmlHPC_EPA.1	4.gappa_examine_lwr-list
+2.raxmlHPC_EPA.1	5.gappa_examine_heat-tree
+0.ext_data.TSV	6.gappa_edit_multiplicity	File containing a tab-separated list of [sample name,] query name, and multiplicity.
+2.raxmlHPC_EPA.1	6.gappa_edit_multiplicity
+6.gappa_edit_multiplicity.1	7.gappa_examine_heat-tree

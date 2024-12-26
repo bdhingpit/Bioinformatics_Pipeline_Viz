@@ -1,7 +1,7 @@
-source	target
-0.ext_data.FASTA	1.PICRUSt2_place_seqs
-1.PICRUSt2_place_seqs.1	2.PICRUSt2_hsp_seqs
-2.PICRUSt2_hsp_seqs.1	3.PICRUSt2_metagenome_pipeline
-3.PICRUSt2_metagenome_pipeline.4	4.PICRUSt2_pathway_pipeline
-4.PICRUSt2_pathway_pipeline.2	5.PICRUSt2_add_descriptions
-3.PICRUSt2_metagenome_pipeline.3	6.PICRUSt2_add_descriptions
+source	target	ext_data_desc
+0.ext_data.FASTA	1.place_seqs.py	Unaligned query sequences.
+1.place_seqs.py.1	2.hsp_seqs.py
+2.hsp_seqs.py.1	3.metagenome_pipeline.py
+3.metagenome_pipeline.py.4	4.pathway_pipeline.py
+4.pathway_pipeline.py.2	5.add_descriptions.py
+3.metagenome_pipeline.py.3	6.add_descriptions.py
