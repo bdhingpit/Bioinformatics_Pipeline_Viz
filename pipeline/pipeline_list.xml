@@ -20,6 +20,10 @@
 		<file>shotgun-metagenomics-viral-binning-pipeline.txt</file>
 		<workflow-desc>Pipeline for QC, assembly, and binning of the viral fraction of a shotgun metagenomic Illumina paired-end data.</workflow-desc>
 	</workflow>
+	<workflow name='Shotgun Metagenomics - Virus 2'>
+		<file>shotgun-metagenomics-viral-binning2-pipeline.txt</file>
+		<workflow-desc>Pipeline for hybrid assembly and recovery of viral metagenome-assembled genomes using long read library(ies) (i.e. PacBio / Nanopore) and Illumina PE data.</workflow-desc>
+	</workflow>
 	<workflow name='Genomics - Prokaryotes'>
 		<file>genomics-prokaryotes-pipeline.txt</file>
 		<workflow-desc>Pipeline for QC, assembly, and functional annotation of prokaryotic genomic Illumina paired-end data.</workflow-desc>

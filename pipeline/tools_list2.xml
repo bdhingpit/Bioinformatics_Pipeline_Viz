@@ -29,6 +29,20 @@
 			<output-desc>HTML report displaying various assembly metrics.</output-desc>
 		</output>
 	</tool>
+	<tool name='Flye'>
+		<desc>Flye is a de novo assembler for single-molecule sequencing reads, such as those produced by PacBio and Oxford Nanopore Technologies. Flye also has a special mode for metagenome assembly [See Assembly Module]</desc>
+		<output>
+			<output-type>FASTA</output-type>
+			<output-desc>Assembled contigs.</output-desc>
+		</output>
+	</tool>
+	<tool name='Pilon'>
+		<desc>Pilon is a software tool which can be used to automatically improve draft assemblies [See Assembly Module]</desc>
+		<output>
+			<output-type>FASTA</output-type>
+			<output-desc>Polished assembly.</output-desc>
+		</output>
+	</tool>
 	
 	<!--Contig Binning Module-->
 	<tool name='jgi_summarize_bam_contig_depths'>
@@ -536,6 +550,28 @@
 		<output>
 			<output-type>FASTQ</output-type>
 			<output-desc>Reverse reads rid of host sequences.</output-desc>
+		</output>
+	</tool>
+	<tool name='NanoPlot'>
+		<desc>Plotting tool for long read sequencing data and alignments. [See Quality Control Module].</desc>
+		<output>
+			<output-type>Stats</output-type>
+			<output-desc>Statistical summary.</output-desc>
+		</output>
+		<output>
+			<output-type>Plots</output-type>
+			<output-desc>Various QC plots.</output-desc>
+		</output>
+		<output>
+			<output-type>HTML</output-type>
+			<output-desc>HTML file containing summary of report.</output-desc>
+		</output>
+	</tool>
+	<tool name='Chopper'>
+		<desc>Trimming and filtering tool for long read data (i.e. PacBio, ONT) [See Quality Control Module].</desc>
+		<output>
+			<output-type>FASTQ</output-type>
+			<output-desc>Clean reads.</output-desc>
 		</output>
 	</tool>
 	

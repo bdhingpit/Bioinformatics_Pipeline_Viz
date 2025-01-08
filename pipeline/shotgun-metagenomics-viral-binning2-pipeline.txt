@@ -1,0 +1,22 @@
+source	target	ext_data_desc
+0.ext_data.FASTQ	1.FastQC	FASTQ format Illumina paired-end library(ies).
+0.ext_data.FASTQ	2.Trimmomatic	FASTQ format Illumina paired-end library(ies).
+1.ext_data.FASTQ	1.NanoPlot	FASTQ format long read (i.e. PacBio / Nanopore) library(ies).
+1.ext_data.FASTQ	2.Chopper
+2.Chopper.1	3.Flye
+2.Trimmomatic.1	4.BBMap
+3.Flye.1	4.BBMap
+3.Flye.1	5.Pilon
+4.BBMap.1	5.Pilon
+5.Pilon.1	6.QUAST
+5.Pilon.1	7.VirSorter2
+7.VirSorter2.1	8.BBMap
+2.Trimmomatic.1	8.BBMap
+8.BBMap.1	9.jgi_summarize_bam_contig_depths
+7.VirSorter2.1	10.MetaBAT2
+9.jgi_summarize_bam_contig_depths.1	10.MetaBAT2
+10.MetaBAT2.1	11.CheckV
+10.MetaBAT2.1	12.Bin_Annotation_Tool
+
+
+
